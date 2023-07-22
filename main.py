@@ -10,3 +10,6 @@ if __name__ == '__main__':
     dataReader = DataReader.DataReader
     dataReader.read_file()
     dataReader.pivot_columns()
+    # dataReader.merge_columns()
+    dataReader.impute_missing_values()
+    dataReader.compute_missing_data_stats()
