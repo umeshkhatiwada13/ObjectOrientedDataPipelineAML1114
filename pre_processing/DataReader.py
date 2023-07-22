@@ -96,8 +96,19 @@ class DataReader:
             }
 
         print("Missing Data Statistics:")
-        # df.to_csv(os.getcwd() + "\\Files\\output_files\\data_statistics.csv")
-        print(result_dict)
+        # Convert int64 values to regular Python integers using tolist() method of NumPy arrays
+        for key, value in result_dict.items():
+            if isinstance(value, dict):
+                for sub_key, sub_value in value.items():
+                    if isinstance(sub_value, np.int64):
+                        result_dict[key][sub_key] = sub_value.tolist()
+
+        # File path to save the JSON data
+        file_path = os.getcwd() + "\\Files\\output_files\\data_statistics.txt"
+
+        # Export the dictionary to a text file in JSON format
+        with open(file_path, 'w') as file:
+            json.dump(result_dict, file, indent=4)
         return result_dict
 
     @staticmethod
@@ -118,4 +129,4 @@ class DataReader:
 
         print("\nImputed DataFrame:")
         print(df)
-        df.to_csv(os.getcwd() + "\\Files\\output_files\\data_statistics.csv")
+        df.to_csv(os.getcwd() + "\\Files\\output_files\\imputed_file.csv")

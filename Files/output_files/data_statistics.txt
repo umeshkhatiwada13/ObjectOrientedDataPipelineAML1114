@@ -1,0 +1,73 @@
+{
+    "missing_percentage": {
+        "row_id": 0.0,
+        "subject_id": 0.0,
+        "hadm_id": 0.0,
+        "icustay_id": 0.010681013509504124,
+        "itemid": 0.0,
+        "charttime": 0.0,
+        "storetime": 0.0,
+        "cgid": 0.0,
+        "value": 4.33148063901471,
+        "valuenum": 57.29124222824403,
+        "valueuom": 68.37167289725788,
+        "warning": 49.59102267407744,
+        "error": 49.59102267407744,
+        "resultstatus": 97.14197176783959,
+        "stopped": 50.59714777379987
+    },
+    "row_id": {
+        "min": 5279021,
+        "max": 274493921
+    },
+    "subject_id": {
+        "min": 10006,
+        "max": 44228
+    },
+    "hadm_id": {
+        "min": 100375,
+        "max": 199395
+    },
+    "icustay_id": {
+        "min": 201006.0,
+        "max": 298685.0
+    },
+    "itemid": {
+        "min": 1,
+        "max": 228414
+    },
+    "cgid": {
+        "min": 14023,
+        "max": 21570
+    },
+    "valuenum": {
+        "min": -500.0,
+        "max": 2222221.7
+    },
+    "warning": {
+        "min": 0.0,
+        "max": 1.0
+    },
+    "error": {
+        "min": 0.0,
+        "max": 1.0
+    },
+    "charttime": {
+        "mode": "2144-07-19 00:00:00"
+    },
+    "storetime": {
+        "mode": "2198-07-09 17:27:00"
+    },
+    "value": {
+        "mode": "1"
+    },
+    "valueuom": {
+        "mode": "mmHg"
+    },
+    "resultstatus": {
+        "mode": "Final"
+    },
+    "stopped": {
+        "mode": "NotStopd"
+    }
+}
