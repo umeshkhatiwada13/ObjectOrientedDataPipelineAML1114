@@ -1,8 +1,8 @@
 {
-"file_locations" : {
+  "file_locations": {
     "CHARTEVENTS": "CHARTEVENTS.csv",
     "OUTPUTEVENTS": "OUTPUTEVENTS.csv",
     "PATIENTS": "PATIENTS.csv",
     "ADMISSIONS": "ADMISSIONS.csv"
-}
+  }
 }
