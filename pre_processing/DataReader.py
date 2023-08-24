@@ -60,9 +60,20 @@ class DataReader:
         df_patients = pd.read_csv(os.getcwd() + "\\Files\\input_files\\PATIENTS.csv")
         df_admission = pd.read_csv(os.getcwd() + "\\Files\\input_files\\ADMISSIONS.csv")
 
-        df_merge = pd.merge(left=df_chart_events_pivoted, right=df_admission, on=['hadm_id'])
-        df_merge = pd.merge(left=df_merge, right=df_patients, on=['hadm_id'])
-        df_merge = pd.merge(left=df_merge, right=df_patients, on=['hadm_id'])
+        merge_keys = {
+            "admissions": "hadm_id",
+            "patients": "subject_id",
+            "chartevents": "hadm_id",
+            "outputevents": "hadm_id"
+        }
+
+        df_merge = pd.DataFrame([])
+        df_merge = pd.merge(left=df_merge, right=df_admission, left_on=['hadm_id'], right_on=["subject_id"])
+        df_merge = pd.merge(left=df_merge, right=df_patients, left_on=['subject_id'], right_on=["subject_id"])
+        df_merge = pd.merge(left=df_merge, right=df_chart_events_pivoted, left_on=['hadm_id'],
+                            right_on=["hadm_id"])
+        df_merge = pd.merge(left=df_merge, right=df_output_events_pivoted, left_on=['hadm_id'],
+                            right_on=["hadm_id"])
 
         df_merge.to_csv(os.getcwd() + "\\Files\\merged_files\\MERGED.csv")
 
